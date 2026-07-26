@@ -4,12 +4,12 @@ A collection of Python automation scripts demonstrating practical skills in data
 
 ## Projects
 
-| # | Project | Description | Key Libraries |
-|---|---------|-------------|---------------|
-| 1 | [CSV Cleaner](./01-csv-cleaner) | Clean and validate CSV data files | pandas |
-| 2 | [Sales Report Generator](./02-sales-report) | Generate Excel reports from sales data | pandas, openpyxl |
-| 3 | [Web Scraper](./03-web-scraper) | Scrape quotes from a website into CSV | requests, BeautifulSoup |
-| 4 | [File Organizer](./04-file-organizer) | Organize files by extension into folders | os, shutil, pathlib |
+| # | Project | Description | Main Script | Key Libraries |
+|---|---------|-------------|-------------|---------------|
+| 1 | [CSV Cleaner](./01-csv-cleaner) | Clean and validate CSV data files | `clean_csv.py` | pandas |
+| 2 | [Sales Report Generator](./02-sales-report) | Generate Excel reports from sales data | `generate_sales_report.py` | pandas, openpyxl |
+| 3 | [Web Scraper](./03-web-scraper) | Scrape quotes from a website into CSV | `scrape_quotes.py` | requests, BeautifulSoup |
+| 4 | [File Organizer](./04-file-organizer) | Organize files by extension into folders | `organize_files.py` | os, shutil, pathlib |
 
 ## Quick Start
 
@@ -22,7 +22,7 @@ A collection of Python automation scripts demonstrating practical skills in data
 
 ```bash
 # Clone the repository
-git clone https://github.com/YOUR_USERNAME/python-freelance-portfolio.git
+git clone https://github.com/osmanozt5432-pixel/python-freelance-portfolio.git
 cd python-freelance-portfolio
 
 # Install dependencies
@@ -32,29 +32,38 @@ pip install -r requirements.txt
 ### Run Any Project
 
 ```bash
-# Example: Run the CSV Cleaner
+# Example 1: Run CSV Cleaner
 cd 01-csv-cleaner
-python temizle.py
+python clean_csv.py
 
-# Example: Run the Web Scraper
-cd 03-web-scraper
-python kaziyici.py
+# Example 2: Run Sales Report Generator
+cd ../02-sales-report
+python generate_sales_report.py
+
+# Example 3: Run Web Scraper
+cd ../03-web-scraper
+python scrape_quotes.py
+
+# Example 4: Run File Organizer
+cd ../04-file-organizer
+python organize_files.py
 ```
 
-Each project folder has its own README with detailed usage instructions and sample output.
+Each project folder contains a dedicated `README.md` with detailed explanations and sample outputs.
 
 ## Skills Demonstrated
 
-- **Data Cleaning & Validation** — Handling missing data, duplicates, whitespace normalization
-- **Data Analysis & Reporting** — Grouping, aggregation, Excel report generation
-- **Web Scraping** — HTTP requests, HTML parsing, pagination handling
-- **File System Automation** — Directory traversal, file organization, path management
-- **Clean Code Practices** — Modular functions, detailed comments, error handling
+- **Data Cleaning & Validation** — Missing value handling, duplicate removal, whitespace normalization
+- **Data Aggregation & Reporting** — Grouping metrics, multi-sheet Excel report generation
+- **Web Scraping** — HTTP requests, HTML parsing, pagination navigation
+- **File Automation** — File system traversal, directory creation, automated file routing
+- **Clean Code & Professional Standards** — Modular structure, full English documentation, error handling
 
-## About Me
+## Author
 
-I'm a Computer Engineering student building practical Python tools for freelance work. These projects showcase my ability to automate real-world tasks efficiently.
+**Osman Öztürk**  
+Computer Engineering Student | Python Automation & Web Scraping Freelancer
 
 ## License
 
-This project is open source and available under the [MIT License](LICENSE).
+This repository is licensed under the [MIT License](LICENSE).

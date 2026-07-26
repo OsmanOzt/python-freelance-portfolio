@@ -15,48 +15,53 @@ A Python script that automatically organizes files in a directory by sorting the
 
 ```bash
 cd 04-file-organizer
-python duzenle.py
+python organize_files.py
 ```
 
-Running the script creates a `test_karisik/` folder with sample files, then organizes them automatically.
+Running the script creates a `sample_folder/` directory with sample files, then organizes them automatically.
 
 ## Sample Output
 
 ```
---- Dosya Duzenleyici - Test Modu ---
+--- File Organizer - Test Mode ---
 
-[KLASOR] Test klasoru olusturuluyor: ...\test_karisik
+[TEST ENV] Creating sample files in: ...\sample_folder
 ----------------------------------------
-  [+] Olusturuldu: rapor.pdf
-  [+] Olusturuldu: ozgecmis.docx
-  [+] Olusturuldu: foto1.jpg
-  [+] Olusturuldu: foto2.png
+  [+] Created: report.pdf
+  [+] Created: resume.docx
+  [+] Created: photo1.jpg
+  [+] Created: photo2.png
   ...
 
---- Dosyalar duzenleniyor... ---
+--- Organizing Files... ---
 
-  [>] foto1.jpg -> Resimler/
-  [>] foto2.png -> Resimler/
-  [>] rapor.pdf -> PDF/
-  [>] ozgecmis.docx -> Word/
-  [>] tablo.xlsx -> Excel/
+  [>] photo1.jpg -> Images/
+  [>] photo2.png -> Images/
+  [>] report.pdf -> PDF/
+  [>] resume.docx -> Word/
+  [>] spreadsheet.xlsx -> Excel/
   ...
 
 ============================================================
-  OZET RAPOR
+  SUMMARY REPORT
 ============================================================
 
-  Toplam tasinan dosya: 14
+  Total Files Moved: 14
 
-  Klasor bazli dagilim:
+  Distribution by Folder:
   ------------------------------
-     Arsiv           -> 1 dosya
-     Excel           -> 1 dosya
-     Metin           -> 1 dosya
-     PDF             -> 1 dosya
-     Resimler        -> 3 dosya
-     Word            -> 1 dosya
-     ...
+     Archives        -> 1 file(s)
+     Audio           -> 1 file(s)
+     Data            -> 2 file(s)
+     Excel           -> 1 file(s)
+     Images          -> 3 file(s)
+     Others          -> 1 file(s)
+     PDF             -> 1 file(s)
+     PowerPoint      -> 1 file(s)
+     Python          -> 1 file(s)
+     Text            -> 1 file(s)
+     Video           -> 1 file(s)
+     Word            -> 1 file(s)
 ============================================================
 ```
 
@@ -74,11 +79,11 @@ Running the script creates a `test_karisik/` folder with sample files, then orga
 | JavaScript | .js |
 | Web | .html, .css |
 | Data | .json, .csv |
-| Archive | .zip, .rar, .7z |
-| Music | .mp3, .wav |
+| Archives | .zip, .rar, .7z |
+| Audio | .mp3, .wav |
 | Video | .mp4, .avi, .mkv |
 
-Files with unrecognized extensions are moved to a `Diger/` (Other) folder.
+Files with unrecognized extensions are moved to an `Others/` folder.
 
 ## How It Works
 
@@ -93,8 +98,8 @@ Files with unrecognized extensions are moved to a `Diger/` (Other) folder.
 To organize your own folders, import the function in Python:
 
 ```python
-from duzenle import dosyalari_duzenle
-dosyalari_duzenle("C:\\Users\\your_name\\Downloads")
+from organize_files import organize_directory
+organize_directory("C:\\Users\\your_name\\Downloads")
 ```
 
 ## Dependencies

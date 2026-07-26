@@ -15,53 +15,50 @@ A Python script that reads sales data from a CSV file, calculates product-level 
 
 ```bash
 cd 02-sales-report
-python rapor.py
+python generate_sales_report.py
 ```
 
-## Sample Input (`satis.csv`)
+## Sample Input (`sales_data.csv`)
 
-```
-urun,adet,fiyat
-Kalem,10,5
-Defter,5,20
-Kalem,7,5
-Silgi,15,3
-Defter,3,20
-Silgi,8,3
-Kalem,4,5
+```csv
+product,quantity,unit_price
+Pen,10,5
+Notebook,5,20
+Pen,7,5
+Eraser,15,3
+Notebook,3,20
+Eraser,8,3
+Pen,4,5
 ```
 
 ## Sample Output
 
 ```
-Ham veri:
-     urun  adet  fiyat
-0   Kalem    10      5
-1  Defter     5     20
-2   Kalem     7      5
-3   Silgi    15      3
-4  Defter     3     20
-5   Silgi     8      3
-6   Kalem     4      5
+==================================================
+  SALES REPORT GENERATOR
+==================================================
 
-Urun Bazli Ozet:
-     urun  toplam_adet  toplam_gelir  ortalama_fiyat
-0  Defter            8           160            20.0
-1   Kalem           21           105             5.0
-2   Silgi           23            69             3.0
+Raw Sales Data:
+    product  quantity  unit_price
+0       Pen        10           5
+1  Notebook         5          20
+2       Pen         7           5
+3    Eraser        15           3
+4  Notebook         3          20
+5    Eraser         8           3
+6       Pen         4           5
 
-Rapor kaydedildi: satis_raporu.xlsx
+Product Summary Report:
+    product  total_quantity  total_revenue  average_price
+0  Notebook               8            160           20.0
+1       Pen              21            105            5.0
+2    Eraser              23             69            3.0
+
+Report exported successfully: sales_report.xlsx
+==================================================
 ```
 
-The generated Excel file (`satis_raporu.xlsx`) contains two sheets that can be opened in Excel, Google Sheets, or LibreOffice Calc.
-
-## How It Works
-
-1. Reads the sales CSV file using pandas
-2. Calculates `total = quantity × price` for each row
-3. Groups by product name and aggregates: sum of quantity, sum of revenue, mean price
-4. Sorts by total revenue (highest first)
-5. Writes both raw data and summary to separate Excel sheets
+The generated Excel file (`sales_report.xlsx`) contains two sheets that can be opened in Excel, Google Sheets, or LibreOffice Calc.
 
 ## Dependencies
 

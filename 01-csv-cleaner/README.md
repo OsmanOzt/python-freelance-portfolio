@@ -14,55 +14,52 @@ A Python script that cleans and validates CSV data files by removing empty rows,
 
 ```bash
 cd 01-csv-cleaner
-python temizle.py
+python clean_csv.py
 ```
 
-## Sample Input (`veri.csv`)
+## Sample Input (`data.csv`)
 
-```
-Isim ,yas,sehir
-Ahmet , 25, Istanbul
-Mehmet,30,Ankara
-Ahmet , 25, Istanbul
+```csv
+name,age,city
+John , 25, New York 
+Alice,30,London
+John , 25, New York 
 ,,
-Zeynep,28,Izmir
-,22,Bursa
+Sarah,28,Paris
+,22,Berlin
 ```
 
 ## Sample Output
 
 ```
-Orijinal veri:
-    Isim   yas      sehir
-0  Ahmet    25   Istanbul
-1  Mehmet   30     Ankara
-2  Ahmet    25   Istanbul
+==================================================
+  CSV DATA CLEANER
+==================================================
+
+Original Data:
+    name   age       city
+0  John     25   New York
+1  Alice    30     London
+2  John     25   New York
 3    NaN   NaN        NaN
-4  Zeynep   28      Izmir
-5    NaN    22      Bursa
-Satir sayisi: 6
+4  Sarah    28      Paris
+5    NaN    22     Berlin
+Total Rows: 6
 
-UYARI: 1 satirda isim eksik, bu satirlar silinecek
+WARNING: 1 row(s) missing 'name' field. Dropping these rows:
+   name  age    city
+5  NaN    22  Berlin
 
-Temizlenmis veri:
-     isim  yas     sehir
-0   Ahmet   25  Istanbul
-1  Mehmet   30    Ankara
-2  Zeynep   28     Izmir
-Satir sayisi: 3
+Cleaned Data:
+    name  age      city
+0   John   25  New York
+1  Alice   30    London
+4  Sarah   28     Paris
+Final Row Count: 3
 
-Temiz dosya kaydedildi: veri_temiz.csv
+Clean file saved successfully: cleaned_data.csv
+==================================================
 ```
-
-## How It Works
-
-1. Reads the CSV file using pandas
-2. Normalizes column names (lowercase, stripped)
-3. Strips whitespace from all text columns
-4. Drops completely empty rows
-5. Drops duplicate rows
-6. Warns about and removes rows with missing critical fields
-7. Saves the cleaned data to `veri_temiz.csv`
 
 ## Dependencies
 

@@ -15,52 +15,52 @@ A Python script that scrapes quotes, authors, and tags from [quotes.toscrape.com
 
 ```bash
 cd 03-web-scraper
-python kaziyici.py
+python scrape_quotes.py
 ```
 
 ## Sample Output
 
 ```
 ============================================================
-  WEB SCRAPING - quotes.toscrape.com
+  WEB SCRAPER — quotes.toscrape.com
 ============================================================
 
-[Sayfa 1] cekiliyor: https://quotes.toscrape.com/page/1/
-  [OK] 10 alinti cekildi
+[Page 1] Fetching: https://quotes.toscrape.com/page/1/
+  [OK] 10 quotes extracted
 
-[Sayfa 2] cekiliyor: https://quotes.toscrape.com/page/2/
-  [OK] 10 alinti cekildi
+[Page 2] Fetching: https://quotes.toscrape.com/page/2/
+  [OK] 10 quotes extracted
 
 ...
 
-[KAYIT] Toplam 50 alinti 'alintilar.csv' dosyasina kaydediliyor...
+[SAVING] Exporting 50 quotes to 'quotes.csv'...
 
 ============================================================
-  TAMAMLANDI!
-  Toplam alinti sayisi: 50
-  Dosya: alintilar.csv
-  Benzersiz yazar sayisi: 28
+  SCRAPING COMPLETED SUCCESSFULLY!
+  Total Quotes: 50
+  Output File: quotes.csv
+  Unique Authors: 28
 ============================================================
 
-Ilk 3 alinti (onizleme):
+First 3 Quotes (Preview):
 ----------------------------------------
 
 1. "The world as we have created it is a process of our thinking..."
-   - Albert Einstein
-   Etiketler: change, deep-thoughts, thinking, world
+   — Albert Einstein
+   Tags: change, deep-thoughts, thinking, world
 
 2. "It is our choices, Harry, that show what we truly are..."
-   - J.K. Rowling
-   Etiketler: abilities, choices
+   — J.K. Rowling
+   Tags: abilities, choices
 ```
 
 ## Generated CSV Structure
 
 | Column | Description |
 |--------|-------------|
-| metin | The quote text |
-| yazar | Author name |
-| etiketler | Comma-separated tags |
+| text | The quote text |
+| author | Author name |
+| tags | Comma-separated tags |
 
 ## How It Works
 
@@ -69,18 +69,8 @@ Ilk 3 alinti (onizleme):
 3. Parses the HTML response with `BeautifulSoup`
 4. Finds all `<div class="quote">` elements on the page
 5. Extracts text, author, and tags from each quote block
-6. Repeats for up to 5 pages (configurable via `MAX_SAYFA`)
-7. Writes all collected data to `alintilar.csv`
-
-## Configuration
-
-You can modify these constants at the top of the script:
-
-```python
-BASE_URL = "https://quotes.toscrape.com"  # Target website
-MAX_SAYFA = 5                              # Number of pages to scrape
-CIKTI_DOSYASI = "alintilar.csv"           # Output filename
-```
+6. Repeats for up to 5 pages (configurable via `MAX_PAGES`)
+7. Writes all collected data to `quotes.csv`
 
 ## Dependencies
 

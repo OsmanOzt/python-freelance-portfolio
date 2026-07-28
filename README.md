@@ -62,7 +62,7 @@ Each project folder contains a dedicated `README.md` with detailed explanations 
 ## Author
 
 **Osman Öztürk**  
-Computer Engineering Student | Python Automation & Web Scraping Freelancer
+Computer Programmer Student | Python Automation & Web Scraping Freelancer
 
 ## License
 

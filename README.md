@@ -1,4 +1,4 @@
-# Python Freelance Portfolio
+# Python Projects Portfolio
 
 A collection of Python automation scripts demonstrating practical skills in data processing, web scraping, report generation, and file management.
 
@@ -62,7 +62,7 @@ Each project folder contains a dedicated `README.md` with detailed explanations 
 ## Author
 
 **Osman Öztürk**  
-Computer Programming Student | Python Automation & Web Scraping Freelancer
+Computer Programming Student
 
 ## License
 

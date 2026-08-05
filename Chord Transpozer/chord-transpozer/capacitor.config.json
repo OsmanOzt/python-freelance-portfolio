@@ -1,0 +1,16 @@
+{
+  "appId": "com.chordtranspozer.app",
+  "appName": "Chord Transpozer",
+  "webDir": "out",
+  "server": {
+    "androidScheme": "https",
+    "hostname": "chordtranspozer.local",
+    "cleartext": true
+  },
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 1500,
+      "backgroundColor": "#0a0b1a"
+    }
+  }
+}

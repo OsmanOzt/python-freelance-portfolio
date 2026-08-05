@@ -1,0 +1,9 @@
+{
+  "$schema": "https://schema.tauri.app/schemas/desktop-schema.json",
+  "identifier": "default",
+  "description": "Default permissions for Chord Transpozer desktop application",
+  "windows": ["main"],
+  "permissions": [
+    "core:default"
+  ]
+}
